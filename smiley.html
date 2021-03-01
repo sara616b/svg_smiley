@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CURSED Smiley</title>
+    <style>
+      .blink {
+        animation-name: blink_kf;
+        animation-duration: 0.5s;
+        animation-iteration-count: infinite;
+        transform-origin: 50% 50%;
+        transform-box: fill-box;
+        animation-delay: 0.5s;
+        animation-timing-function: ease-out;
+        animation-direction: alternate-reverse;
+      }
+
+      @keyframes blink_kf {
+        0% {
+          transform: scaleY(1);
+        }
+        100% {
+          transform: scaleY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <svg height="350" width="350">
+      <circle
+        cx="125"
+        cy="175"
+        r="100"
+        fill="orange"
+        stroke="black"
+        stroke-width="1"
+      />
+      <path d="m 50,190 c 40,100 120,100 150, 0" stroke="black" />
+      <circle
+        class="blink"
+        cx="100"
+        cy="145"
+        r="30"
+        fill="white"
+        stroke="black"
+        stroke-width="5"
+      />
+      <circle
+        cx="150"
+        cy="145"
+        r="30"
+        fill="white"
+        stroke="black"
+        stroke-width="5"
+      />
+      <circle
+        class="blink"
+        cx="100"
+        cy="145"
+        r="10"
+        fill="black"
+        stroke="transparent"
+      />
+      <circle cx="150" cy="145" r="10" fill="black" stroke="transparent" />
+    </svg>
+  </body>
+</html>
