@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car, Flower, House Scene</title>
+    <style>
+      #car {
+        animation-name: car_drive;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+      @keyframes car_drive {
+        0% {
+          transform: translateX(-50px);
+        }
+        100% {
+          transform: translateX(200px);
+        }
+      }
+      .rotate {
+        animation-name: rotate;
+        animation-duration: 4s;
+        animation-iteration-count: 1;
+        transform-box: fill-box;
+        transform-origin: 50% 50%;
+      }
+      @keyframes rotate {
+        0% {
+          transform: rotate(0);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <svg width="500" height="500">
+      <g id="background">
+        <rect
+          x="0"
+          y="0"
+          width="500"
+          height="350"
+          fill="#E6F1F2"
+          stroke="transparent"
+        />
+        <rect
+          x="0"
+          y="350"
+          width="500"
+          height="150"
+          fill="#89F092"
+          stroke="transparent"
+        />
+      </g>
+      <g id="house">
+        <rect
+          x="50"
+          y="100"
+          width="300"
+          height="250"
+          fill="#A3545C"
+          stroke="black"
+          stroke-width="3"
+        />
+        <rect x="75" y="200" width="100" height="100" fill="#BDD1D6" />
+        <rect x="200" y="200" width="100" height="150" fill="#A17D84" />
+        <path
+          stroke="black"
+          stroke-width="3"
+          d="m 20,120 l 380,0 l -40,-50 l -310,0 l -30,50"
+          fill="#EB8C69"
+        />
+      </g>
+      <g id="flower">
+        <line
+          x1="400"
+          x2="410"
+          y1="300"
+          y2="360"
+          stroke="green"
+          stroke-width="3"
+        />
+        <path
+          d="m 390,290 c -5,5 -10,10 0 15 c 2,5 2,20 10,7 c 15,15 17,10 15,-5 c 20,-5 20,-5 0,-15 c 0,0 -20,-20 -27,0 z"
+          fill="#EB6375"
+          stroke="black"
+          stroke-width="3"
+        />
+        <circle cx="400" cy="300" r="8" fill="yellow" />
+      </g>
+      <g id="car">
+        <circle cx="150" cy="400" r="30" fill="black" />
+        <circle cx="250" cy="400" r="30" fill="black" />
+        <path
+          d="m 100,400 l 200,0 c 20,-50 -10,-40 -50,-50 l -10,-40 -70,0 -10,40 c -20,0 -70,-20 -60,50 "
+          stroke="black"
+          stroke-width="3"
+          fill="orange"
+        />
+      </g>
+    </svg>
+  </body>
+  <script>
+    document.querySelector("#flower").addEventListener("click", () => {
+      document.querySelector("#flower").classList.add("rotate");
+      document.querySelector("#flower").addEventListener("animationend", () => {
+        document.querySelector("#flower").classList.remove("rotate");
+      });
+    });
+  </script>
+</html>
